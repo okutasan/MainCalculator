@@ -12,7 +12,7 @@ import org.w3c.dom.Text;
 
 public class Calculator extends AppCompatActivity {
 
-    private Button tambah,kurang,bagi,kali;
+    private Button tambah,kurang,bagi,kali,hapus;
     private String saya="Kalkulator Sederhana";
     private TextView tampilText,tampilHasil;
     private EditText angka1,angka2;
@@ -31,6 +31,7 @@ public class Calculator extends AppCompatActivity {
         kurang=(Button)findViewById(R.id.button2);
         bagi=(Button)findViewById(R.id.button3);
         kali=(Button)findViewById(R.id.button4);
+        hapus=(Button)findViewById(R.id.button5);
         tampilHasil=(TextView)findViewById(R.id.textView5);
 
         tambah.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +68,18 @@ public class Calculator extends AppCompatActivity {
                 b=Integer.parseInt(angka2.getText().toString());
                 c=a*b;
                 tampilHasil.setText(c.toString());
+            }
+        });
+        hapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                c=0;
+                a=Integer.parseInt(angka1.getText().toString());
+                b=Integer.parseInt(angka2.getText().toString());
+                tampilHasil.setText(c.toString());
+
+
             }
         });
 
